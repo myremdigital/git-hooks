@@ -13,7 +13,7 @@
 # File containing the commit message
 BRANCHNAME=$(git rev-parse --abbrev-ref HEAD)
 # Predefined list of supported commit types 
-TYPELIST="chore|bugfix|hotfix|doc(s)?|experimental|build|feat(ure)?|refactor|revert|style|perf"
+TYPELIST="chore|fix|bugfix|hotfix|doc(s)?|experimental|build|feat(ure)?|refactor|revert|style|perf"
 # Project root directory
 ROOTDIR=$PWD
 
@@ -77,7 +77,7 @@ check_branch_name() {
     # Build the regular expression to validate the branch name
     local COMMITRE="^(${TYPELIST})"                      # Branch type
     COMMITRE="${COMMITRE}/[a-z].*"                       # Description/Subject
-    COMMITRE="${COMMITRE}/(no-ref|[A-Z]{2,6}-[0-9]+)i\$" # JIRA reference
+    COMMITRE="${COMMITRE}/(no-ref|[A-Z]{2,6}-[0-9]+)\$" # JIRA reference
 
     if echo $BRANCHNAME | grep -Eq "$COMMITRE" >& /dev/null; then
         return
