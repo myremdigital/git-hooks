@@ -83,7 +83,7 @@ check_branch_name() {
         return
     fi
 
-    if [ "$BRANCHNAME" = "main" ]; then
+    if [ "$BRANCHNAME" = "main" -o "$BRANCHNAME" = "master" ]; then
         return
     fi
 
