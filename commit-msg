@@ -8,7 +8,7 @@
 # commit.  The hook is allowed to edit the commit message file.
 #
 # Author : Jacques Raphanel
-# Version: 1.0
+# Version: 1.1
 #
 
 # File containing the commit message
