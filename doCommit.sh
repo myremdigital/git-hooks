@@ -73,7 +73,7 @@ function run_menu() {
     tput civis
     tput sc
     print_menu "$selected_item" "${menu_items[@]}"
-    
+
     while read -rsn1 input
     do
         case "$input"
@@ -130,8 +130,8 @@ check_stagged_files() {
 # Ensure that at least one file is stagged
 check_stagged_files
 
-echo ""
-echo ""
+# Clear screen to focus on git commit operation
+clear
 
 # Select the commit type
 selected_item=0
